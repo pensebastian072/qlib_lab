@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>{% block title %}qlib_lab{% endblock %}</title>
+<link href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta20/dist/css/tabler.min.css" rel="stylesheet"/>
+<style>
+  body { background:#10131a; }
+  .mono { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.82rem; }
+</style>
+{% block head %}{% endblock %}
+</head>
+<body class="theme-dark">
+<div class="page">
+  <header class="navbar navbar-expand-md navbar-dark d-print-none">
+    <div class="container-xl">
+      <h1 class="navbar-brand fs-2 mb-0">
+        &#128300; qlib_lab <span class="text-muted fs-4">research bench</span>
+      </h1>
+      <div class="ms-auto d-flex gap-2 align-items-center">
+        <span class="badge bg-secondary" id="pillSource">source &hellip;</span>
+        <span class="badge bg-secondary" id="pillAsOf">as of &hellip;</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-body">
+    <div class="container-xl">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+
+  <footer class="footer footer-transparent d-print-none">
+    <div class="container-xl">
+      <div class="text-muted small">
+        Read-only research viewer. Binds 127.0.0.1 only, exposes no POST route, and
+        is wired to nothing that acts. Not investment advice &mdash; see
+        <span class="mono">DISCLAIMER.md</span>.
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="/static/app.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% block title %}qlib_lab &mdash; walk-forward bench{% endblock %}
+{% block content %}
+      <div class="card mb-2">
+        <div class="card-header">
+          <h3 class="card-title">Gate verdicts</h3>
+          <span class="card-subtitle ms-2 text-muted" id="qlSummary">loading&hellip;</span>
+        </div>
+        <div class="card-body py-2">
+          <div class="text-muted small">
+            A LightGBM model over Alpha158 features plus a macro panel, evaluated on a
+            quarterly walk-forward at 5-day and 21-day horizons. It stays
+            <strong>SHADOW</strong> until it clears the canonical gate:
+            <span class="mono">PBO &lt; 0.5</span> <em>and</em>
+            <span class="mono">Deflated Sharpe ratio &gt; 1.645</span>.
+          </div>
+          <div class="text-muted small mt-2">
+            That bar was <span class="mono">0.0</span> until 2026-07-30. A
+            <span class="mono">ratio &gt; 0</span> test is only a median test &mdash;
+            best-of-8 pure noise clears it about 45% of the time. This page
+            <strong>recomputes</strong> each verdict from the stored statistics rather
+            than reading the <span class="mono">passes</span> field, so a verdict written
+            under the old bar cannot be republished as a pass.
+          </div>
+          <div class="table-responsive mt-2">
+            <table class="table table-vcenter table-sm card-table mono">
+              <thead><tr>
+                <th>Horizon</th><th class="text-center">Gate</th>
+                <th class="text-end">DSR ratio</th><th class="text-end">PBO</th>
+                <th class="text-end">Profit factor</th><th class="text-end">Trades</th>
+              </tr></thead>
+              <tbody id="qlGateBody"><tr><td colspan="6" class="text-muted">loading&hellip;</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-2">
+        <div class="card-header">
+          <h3 class="card-title">Cross-sectional ranking</h3>
+          <span class="card-subtitle ms-2 text-muted" id="qlAssetCount"></span>
+        </div>
+        <div class="card-body py-2">
+          <div class="text-muted small">
+            Per-asset model score and cross-sectional rank at each horizon, sorted by the
+            5-day rank. <strong>Display only.</strong> The model has not cleared the gate,
+            so none of this sizes, gates or vetoes anything. The universe is macro
+            <em>proxies</em> including indices, not a tradable book.
+          </div>
+        </div>
+        <div class="table-responsive" style="max-block-size:60vh">
+          <table class="table table-vcenter table-sm card-table mono">
+            <thead><tr>
+              <th>Asset</th><th>Force</th>
+              <th class="text-center">Lean</th>
+              <th class="text-end">Rank 5d</th><th class="text-end">Score 5d</th>
+              <th class="text-end">Rank 21d</th><th class="text-end">Score 21d</th>
+              <th class="text-end">Conviction</th>
+            </tr></thead>
+            <tbody id="qlBody"><tr><td colspan="8" class="text-muted">loading&hellip;</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">ETF creation/redemption flows</h3>
+          <span class="card-subtitle ms-2 text-muted" id="efSummary"></span>
+        </div>
+        <div class="card-body py-2">
+          <div class="text-muted small" id="efMethod"></div>
+          <div class="text-muted small mt-2" id="efUncovered"></div>
+        </div>
+        <div class="table-responsive" style="max-block-size:45vh">
+          <table class="table table-vcenter table-sm card-table mono">
+            <thead><tr>
+              <th>Ticker</th><th>Label</th>
+              <th class="text-end">Price</th><th class="text-end">Flow 1d</th>
+              <th class="text-end">Flow 5d</th><th class="text-end">Snapshots</th>
+            </tr></thead>
+            <tbody id="efBody"><tr><td colspan="6" class="text-muted">loading&hellip;</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+{% endblock %}
+{% block scripts %}
+<script>
+function leanBadge(v){
+  if(v>0) return '<span class="badge bg-green">&#9650;</span>';
+  if(v<0) return '<span class="badge bg-red">&#9660;</span>';
+  return '<span class="badge bg-secondary">&ndash;</span>';
+}
+function usd(n){
+  if(n==null||isNaN(n)) return '<span class="text-muted">–</span>';
+  const m = n/1e6, cls = n<0 ? 'text-red' : 'text-green';
+  return `<span class="${cls}">${m<0?'-':''}$${fmt(Math.abs(m),1)}m</span>`;
+}
+
+async function loadQlib(){
+  let d; try { d = await getJSON('/api/qlib'); } catch(e){ return; }
+  setSourcePills(d);
+
+  const age = d.age_days!=null ? `${fmt(d.age_days,1)} days old` : 'age unknown';
+  $('qlSummary').innerHTML =
+    `<span class="badge ${d.stale?'bg-orange':'bg-secondary'}">${d.stale?'STALE':'current'}</span> `
+    + `${esc(age)} &middot; model <span class="mono">${esc(d.model||'?')}</span> &middot; `
+    + `data through ${esc(d.data_through||'?')} &middot; `
+    + `promoted: <strong>${d.promoted?'yes':'no'}</strong> &middot; `
+    + `${d.n_pass||0} of ${(d.gate_rows||[]).length} horizons pass`
+    + ((d.n_superseded||0) ? ` &middot; <span class="text-orange">${d.n_superseded} stale PASS in flag</span>` : '');
+
+  $('qlGateBody').innerHTML = (d.gate_rows||[]).map(r=>
+    `<tr><td>${esc(r.horizon)}</td>
+      <td class="text-center">${r.passes
+        ? '<span class="badge bg-green">PASS</span>'
+        : (r.superseded
+            ? '<span class="badge bg-orange" title="marked PASS under the old DSR>0 bar">superseded</span>'
+            : '<span class="badge bg-secondary">fail</span>')}</td>
+      <td class="text-end ${r.dsr_ratio!=null && r.dsr_ratio>d.dsr_min?'text-green':'text-red'}">${r.dsr_ratio!=null?fmt(r.dsr_ratio,4):'–'}</td>
+      <td class="text-end">${r.pbo!=null?fmt(r.pbo,4):'<span class="text-muted">–</span>'}</td>
+      <td class="text-end">${r.profit_factor!=null?fmt(r.profit_factor,4):'<span class="text-muted">–</span>'}</td>
+      <td class="text-end text-muted">${r.n_trades!=null?r.n_trades:'–'}</td></tr>`
+  ).join('') || `<tr><td colspan="6" class="text-muted">no gate rows</td></tr>`;
+
+  const rows = d.asset_rows||[];
+  $('qlAssetCount').textContent = rows.length ? `${rows.length} assets, top-k ${d.topk??'?'}` : '';
+  $('qlBody').innerHTML = rows.map(r=>
+    `<tr><td><strong>${esc(r.symbol)}</strong></td>
+      <td class="text-muted">${esc(r.force)}</td>
+      <td class="text-center">${leanBadge(r.lean)}</td>
+      <td class="text-end">${r.rank_5d!=null?fmt(r.rank_5d,4):'–'}</td>
+      <td class="text-end text-muted">${r.score_5d!=null?fmt(r.score_5d,6):'–'}</td>
+      <td class="text-end">${r.rank_21d!=null?fmt(r.rank_21d,4):'–'}</td>
+      <td class="text-end text-muted">${r.score_21d!=null?fmt(r.score_21d,6):'–'}</td>
+      <td class="text-end text-muted">${r.conviction!=null?fmt(r.conviction,4):'–'}</td></tr>`
+  ).join('') || `<tr><td colspan="8" class="text-muted">${esc(d.note||'no assets in flag')}</td></tr>`;
+}
+
+async function loadFlows(){
+  let d; try { d = await getJSON('/api/etf_flows'); } catch(e){ return; }
+  const rows = d.rows||[];
+  $('efSummary').innerHTML =
+    `<span class="badge ${d.stale?'bg-orange':'bg-secondary'}">${d.stale?'STALE':'current'}</span> `
+    + `${rows.length} funds &middot; history since ${esc(d.history_since||'?')}`;
+  $('efMethod').textContent = d.method || '';
+  const unc = d.uncovered||{};
+  const keys = Object.keys(unc);
+  $('efUncovered').innerHTML = keys.length
+    ? `<strong>Not covered (${keys.length}):</strong> `
+      + keys.map(k=>`<span class="mono">${esc(k)}</span> &mdash; ${esc(unc[k])}`).join('; ')
+    : '';
+  $('efBody').innerHTML = rows.map(r=>
+    `<tr><td><strong>${esc(r.ticker)}</strong></td>
+      <td class="text-muted">${esc(r.label)}</td>
+      <td class="text-end">${r.price!=null?fmt(r.price,2):'–'}</td>
+      <td class="text-end">${usd(r.flow_1d)}</td>
+      <td class="text-end">${usd(r.flow_5d)}</td>
+      <td class="text-end text-muted">${r.snapshots!=null?r.snapshots:'–'}</td></tr>`
+  ).join('') || `<tr><td colspan="6" class="text-muted">${esc(d.note||'no flow rows')}</td></tr>`;
+}
+
+function refresh(){ loadQlib(); loadFlows(); }
+refresh();
+setInterval(refresh, 60000);
+</script>
+{% endblock %}

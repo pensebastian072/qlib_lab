@@ -1,0 +1,50 @@
+{
+ "label": "POST-HOC, chosen after seeing the study output; not evidence",
+ "rule": "short idx52>=0.8, long idx52<=0.2, hold 13w, non-overlapping",
+ "n_trades": 482,
+ "n_assets": 13,
+ "date_range": [
+  "2016-08-25",
+  "2026-03-30"
+ ],
+ "mean_pnl": 0.00856152809110189,
+ "hit_rate": 0.520746887966805,
+ "profit_factor": 1.2110075057237284,
+ "sharpe_per_trade": 0.06028085414320465,
+ "gate_n_trials_117": {
+  "passes": false,
+  "deflated_sharpe": {
+   "sr": 0.0603,
+   "ratio": -1.2132,
+   "prob": 0.1125,
+   "n": 482,
+   "n_trials": 117,
+   "psr_z": 1.3721,
+   "bracket": 2.5854,
+   "sr_star": 0.113581,
+   "sigma_sr": 0.043932
+  },
+  "pbo": 0.0159,
+  "profit_factor": 1.211,
+  "sharpe": 0.06028085414320465,
+  "n_trades": 482,
+  "thresholds": {
+   "deflated_sharpe_min": 1.645,
+   "pbo_max": 0.5
+  },
+  "reasons": [
+   "deflated_sharpe_ratio -1.2132 <= 1.645"
+  ]
+ },
+ "deflated_sharpe_if_only_one_trial": {
+  "sr": 0.0603,
+  "ratio": 1.3721,
+  "prob": 0.915,
+  "n": 482,
+  "n_trials": 1,
+  "psr_z": 1.3721,
+  "bracket": 0.0,
+  "sr_star": 0.0,
+  "sigma_sr": 0.043932
+ }
+}

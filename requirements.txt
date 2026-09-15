@@ -1,0 +1,10 @@
+# Qlib needs the pre-numpy-2 stack; resolver verified 2026-07-13.
+pyqlib==0.9.7
+numpy<2
+pandas>=2.0,<2.1
+lightgbm
+pyarrow
+pytest
+
+# Standalone read-only viewer (ui/app.py, 127.0.0.1:8103)
+flask>=3.0

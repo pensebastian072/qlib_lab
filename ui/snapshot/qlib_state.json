@@ -1,0 +1,1322 @@
+{
+  "as_of": "2026-09-13T15:20:15.886198+00:00",
+  "data_through": "2026-09-11",
+  "stale": false,
+  "status": "SHADOW",
+  "enforce": "no",
+  "model": "qlib_lgbm_alpha158_macro",
+  "promoted": false,
+  "gate": {
+    "5d": {
+      "passes": false,
+      "dsr_ratio": -1.0394,
+      "pbo": 0.4524,
+      "profit_factor": 1.002,
+      "n_trades": 354
+    },
+    "21d": {
+      "passes": false,
+      "dsr_ratio": 0.2589,
+      "pbo": 0.1786,
+      "profit_factor": 1.5017,
+      "n_trades": 84
+    }
+  },
+  "topk": 8,
+  "assets": {
+    "AGG": {
+      "horizons": {
+        "5d": {
+          "score": 0.002635,
+          "rank_pct": 0.0921,
+          "lean": -1
+        },
+        "21d": {
+          "score": 0.012883,
+          "rank_pct": 0.1316,
+          "lean": 0
+        }
+      },
+      "lean": -1,
+      "conviction": 0.7763,
+      "force": "bond"
+    },
+    "BIL": {
+      "horizons": {
+        "5d": {
+          "score": 0.001019,
+          "rank_pct": 0.0263,
+          "lean": -1
+        },
+        "21d": {
+          "score": 0.012632,
+          "rank_pct": 0.1053,
+          "lean": -1
+        }
+      },
+      "lean": -1,
+      "conviction": 0.8684,
+      "force": "liquidity"
+    },
+    "BNDX": {
+      "horizons": {
+        "5d": {
+          "score": 0.002091,
+          "rank_pct": 0.0526,
+          "lean": -1
+        },
+        "21d": {
+          "score": 0.00976,
+          "rank_pct": 0.0263,
+          "lean": -1
+        }
+      },
+      "lean": -1,
+      "conviction": 0.9211,
+      "force": "bond"
+    },
+    "COPPER": {
+      "horizons": {
+        "5d": {
+          "score": 0.00567,
+          "rank_pct": 0.75,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.022075,
+          "rank_pct": 0.4211,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.1711,
+      "force": "commodities"
+    },
+    "DBA": {
+      "horizons": {
+        "5d": {
+          "score": 0.005463,
+          "rank_pct": 0.6842,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.023234,
+          "rank_pct": 0.5263,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.2105,
+      "force": "commodity"
+    },
+    "DBC": {
+      "horizons": {
+        "5d": {
+          "score": 0.003757,
+          "rank_pct": 0.3553,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.02111,
+          "rank_pct": 0.3553,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.2894,
+      "force": "commodity"
+    },
+    "DIA": {
+      "horizons": {
+        "5d": {
+          "score": 0.004449,
+          "rank_pct": 0.4474,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.022892,
+          "rank_pct": 0.5,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.0526,
+      "force": "style"
+    },
+    "EEM": {
+      "horizons": {
+        "5d": {
+          "score": 0.004066,
+          "rank_pct": 0.3947,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.01724,
+          "rank_pct": 0.2237,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.3816,
+      "force": "equities"
+    },
+    "EFA": {
+      "horizons": {
+        "5d": {
+          "score": 0.003364,
+          "rank_pct": 0.2763,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.018983,
+          "rank_pct": 0.2632,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.4605,
+      "force": "region"
+    },
+    "EMB": {
+      "horizons": {
+        "5d": {
+          "score": 0.002613,
+          "rank_pct": 0.0789,
+          "lean": -1
+        },
+        "21d": {
+          "score": 0.009502,
+          "rank_pct": 0.0132,
+          "lean": -1
+        }
+      },
+      "lean": -1,
+      "conviction": 0.9079,
+      "force": "bond"
+    },
+    "EWA": {
+      "horizons": {
+        "5d": {
+          "score": 0.004942,
+          "rank_pct": 0.5658,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.02501,
+          "rank_pct": 0.5789,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.1447,
+      "force": "country"
+    },
+    "EWC": {
+      "horizons": {
+        "5d": {
+          "score": 0.004645,
+          "rank_pct": 0.5263,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.021166,
+          "rank_pct": 0.3816,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.0921,
+      "force": "country"
+    },
+    "EWG": {
+      "horizons": {
+        "5d": {
+          "score": 0.003896,
+          "rank_pct": 0.3684,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.027539,
+          "rank_pct": 0.7105,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.0789,
+      "force": "country"
+    },
+    "EWH": {
+      "horizons": {
+        "5d": {
+          "score": 0.005636,
+          "rank_pct": 0.7237,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.025368,
+          "rank_pct": 0.5921,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.3158,
+      "force": "country"
+    },
+    "EWJ": {
+      "horizons": {
+        "5d": {
+          "score": 0.002843,
+          "rank_pct": 0.1184,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.02291,
+          "rank_pct": 0.5132,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.3684,
+      "force": "country"
+    },
+    "EWS": {
+      "horizons": {
+        "5d": {
+          "score": 0.003008,
+          "rank_pct": 0.1711,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.019839,
+          "rank_pct": 0.3026,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.5263,
+      "force": "country"
+    },
+    "EWT": {
+      "horizons": {
+        "5d": {
+          "score": 0.005968,
+          "rank_pct": 0.8158,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.033422,
+          "rank_pct": 0.9342,
+          "lean": 1
+        }
+      },
+      "lean": 1,
+      "conviction": 0.75,
+      "force": "country"
+    },
+    "EWU": {
+      "horizons": {
+        "5d": {
+          "score": 0.004581,
+          "rank_pct": 0.4737,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.020581,
+          "rank_pct": 0.3289,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.1974,
+      "force": "country"
+    },
+    "EWW": {
+      "horizons": {
+        "5d": {
+          "score": 0.00576,
+          "rank_pct": 0.7632,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.019786,
+          "rank_pct": 0.2895,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.0527,
+      "force": "country"
+    },
+    "EWY": {
+      "horizons": {
+        "5d": {
+          "score": 0.010315,
+          "rank_pct": 1.0,
+          "lean": 1
+        },
+        "21d": {
+          "score": 0.036073,
+          "rank_pct": 0.9737,
+          "lean": 1
+        }
+      },
+      "lean": 1,
+      "conviction": 0.9737,
+      "force": "country"
+    },
+    "EWZ": {
+      "horizons": {
+        "5d": {
+          "score": 0.008933,
+          "rank_pct": 0.9868,
+          "lean": 1
+        },
+        "21d": {
+          "score": 0.025696,
+          "rank_pct": 0.6316,
+          "lean": 0
+        }
+      },
+      "lean": 1,
+      "conviction": 0.6184,
+      "force": "country"
+    },
+    "FXI": {
+      "horizons": {
+        "5d": {
+          "score": 0.00461,
+          "rank_pct": 0.4868,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.03416,
+          "rank_pct": 0.9474,
+          "lean": 1
+        }
+      },
+      "lean": 1,
+      "conviction": 0.4342,
+      "force": "country"
+    },
+    "GDX": {
+      "horizons": {
+        "5d": {
+          "score": 0.008166,
+          "rank_pct": 0.9474,
+          "lean": 1
+        },
+        "21d": {
+          "score": 0.025609,
+          "rank_pct": 0.6053,
+          "lean": 0
+        }
+      },
+      "lean": 1,
+      "conviction": 0.5527,
+      "force": "industry"
+    },
+    "GDXJ": {
+      "horizons": {
+        "5d": {
+          "score": 0.00822,
+          "rank_pct": 0.9605,
+          "lean": 1
+        },
+        "21d": {
+          "score": 0.022656,
+          "rank_pct": 0.4868,
+          "lean": 0
+        }
+      },
+      "lean": 1,
+      "conviction": 0.4473,
+      "force": "industry"
+    },
+    "GOLD": {
+      "horizons": {
+        "5d": {
+          "score": 0.004302,
+          "rank_pct": 0.4342,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.030193,
+          "rank_pct": 0.8553,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.2895,
+      "force": "commodities"
+    },
+    "HYG": {
+      "horizons": {
+        "5d": {
+          "score": 0.002848,
+          "rank_pct": 0.1316,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.012654,
+          "rank_pct": 0.1184,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.75,
+      "force": "credit"
+    },
+    "IEF": {
+      "horizons": {
+        "5d": {
+          "score": 0.003253,
+          "rank_pct": 0.2368,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.011154,
+          "rank_pct": 0.0658,
+          "lean": -1
+        }
+      },
+      "lean": -1,
+      "conviction": 0.6974,
+      "force": "bond"
+    },
+    "ILF": {
+      "horizons": {
+        "5d": {
+          "score": 0.007649,
+          "rank_pct": 0.9342,
+          "lean": 1
+        },
+        "21d": {
+          "score": 0.020355,
+          "rank_pct": 0.3158,
+          "lean": 0
+        }
+      },
+      "lean": 1,
+      "conviction": 0.25,
+      "force": "region"
+    },
+    "INDA": {
+      "horizons": {
+        "5d": {
+          "score": 0.003334,
+          "rank_pct": 0.25,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.019238,
+          "rank_pct": 0.2763,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.4737,
+      "force": "country"
+    },
+    "ITA": {
+      "horizons": {
+        "5d": {
+          "score": 0.005038,
+          "rank_pct": 0.5921,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.037062,
+          "rank_pct": 0.9868,
+          "lean": 1
+        }
+      },
+      "lean": 1,
+      "conviction": 0.5789,
+      "force": "industry"
+    },
+    "IWD": {
+      "horizons": {
+        "5d": {
+          "score": 0.003651,
+          "rank_pct": 0.3421,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.018613,
+          "rank_pct": 0.25,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.4079,
+      "force": "style"
+    },
+    "IWF": {
+      "horizons": {
+        "5d": {
+          "score": 0.004567,
+          "rank_pct": 0.4605,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.014394,
+          "rank_pct": 0.1711,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.3684,
+      "force": "style"
+    },
+    "IWM": {
+      "horizons": {
+        "5d": {
+          "score": 0.006317,
+          "rank_pct": 0.8684,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.029277,
+          "rank_pct": 0.8158,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.6842,
+      "force": "equities"
+    },
+    "IWN": {
+      "horizons": {
+        "5d": {
+          "score": 0.005982,
+          "rank_pct": 0.8289,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.022587,
+          "rank_pct": 0.4737,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.3026,
+      "force": "style"
+    },
+    "IWO": {
+      "horizons": {
+        "5d": {
+          "score": 0.00566,
+          "rank_pct": 0.7368,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.025677,
+          "rank_pct": 0.6184,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.3552,
+      "force": "style"
+    },
+    "IYT": {
+      "horizons": {
+        "5d": {
+          "score": 0.005235,
+          "rank_pct": 0.6447,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.027528,
+          "rank_pct": 0.6974,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.3421,
+      "force": "industry"
+    },
+    "KRE": {
+      "horizons": {
+        "5d": {
+          "score": 0.007278,
+          "rank_pct": 0.9079,
+          "lean": 1
+        },
+        "21d": {
+          "score": 0.030193,
+          "rank_pct": 0.8421,
+          "lean": 0
+        }
+      },
+      "lean": 1,
+      "conviction": 0.75,
+      "force": "industry"
+    },
+    "KWEB": {
+      "horizons": {
+        "5d": {
+          "score": 0.005123,
+          "rank_pct": 0.6053,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.032761,
+          "rank_pct": 0.9211,
+          "lean": 1
+        }
+      },
+      "lean": 1,
+      "conviction": 0.5264,
+      "force": "industry"
+    },
+    "LQD": {
+      "horizons": {
+        "5d": {
+          "score": 0.003025,
+          "rank_pct": 0.1842,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.01099,
+          "rank_pct": 0.0395,
+          "lean": -1
+        }
+      },
+      "lean": -1,
+      "conviction": 0.7763,
+      "force": "credit"
+    },
+    "MDY": {
+      "horizons": {
+        "5d": {
+          "score": 0.00495,
+          "rank_pct": 0.5789,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.023892,
+          "rank_pct": 0.5395,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.1184,
+      "force": "style"
+    },
+    "MTUM": {
+      "horizons": {
+        "5d": {
+          "score": 0.005211,
+          "rank_pct": 0.6184,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.02704,
+          "rank_pct": 0.6842,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.3026,
+      "force": "factor"
+    },
+    "MUB": {
+      "horizons": {
+        "5d": {
+          "score": 0.003953,
+          "rank_pct": 0.3816,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.011548,
+          "rank_pct": 0.0789,
+          "lean": -1
+        }
+      },
+      "lean": -1,
+      "conviction": 0.5395,
+      "force": "bond"
+    },
+    "OIL": {
+      "horizons": {
+        "5d": {
+          "score": -0.011943,
+          "rank_pct": 0.0132,
+          "lean": -1
+        },
+        "21d": {
+          "score": 0.064026,
+          "rank_pct": 1.0,
+          "lean": 1
+        }
+      },
+      "lean": 0,
+      "conviction": 0.0132,
+      "force": "commodities"
+    },
+    "QQQ": {
+      "horizons": {
+        "5d": {
+          "score": 0.002771,
+          "rank_pct": 0.1053,
+          "lean": -1
+        },
+        "21d": {
+          "score": 0.011861,
+          "rank_pct": 0.0921,
+          "lean": -1
+        }
+      },
+      "lean": -1,
+      "conviction": 0.8026,
+      "force": "equities"
+    },
+    "QUAL": {
+      "horizons": {
+        "5d": {
+          "score": 0.004627,
+          "rank_pct": 0.5,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.021143,
+          "rank_pct": 0.3684,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.1316,
+      "force": "factor"
+    },
+    "RSP": {
+      "horizons": {
+        "5d": {
+          "score": 0.00589,
+          "rank_pct": 0.8026,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.027621,
+          "rank_pct": 0.7237,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.5263,
+      "force": "factor"
+    },
+    "SHY": {
+      "horizons": {
+        "5d": {
+          "score": 0.003056,
+          "rank_pct": 0.1974,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.014533,
+          "rank_pct": 0.1842,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.6184,
+      "force": "bond"
+    },
+    "SLV": {
+      "horizons": {
+        "5d": {
+          "score": 0.003411,
+          "rank_pct": 0.3026,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.028424,
+          "rank_pct": 0.7632,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.0658,
+      "force": "commodity"
+    },
+    "SMH": {
+      "horizons": {
+        "5d": {
+          "score": 0.00589,
+          "rank_pct": 0.7895,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.02654,
+          "rank_pct": 0.6447,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.4342,
+      "force": "industry"
+    },
+    "SPLV": {
+      "horizons": {
+        "5d": {
+          "score": 0.006148,
+          "rank_pct": 0.8553,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.021757,
+          "rank_pct": 0.3947,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.25,
+      "force": "factor"
+    },
+    "SPY": {
+      "horizons": {
+        "5d": {
+          "score": 0.003431,
+          "rank_pct": 0.3158,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.013216,
+          "rank_pct": 0.1447,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.5395,
+      "force": "equities"
+    },
+    "TIP": {
+      "horizons": {
+        "5d": {
+          "score": 0.002886,
+          "rank_pct": 0.1447,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.011013,
+          "rank_pct": 0.0526,
+          "lean": -1
+        }
+      },
+      "lean": -1,
+      "conviction": 0.8027,
+      "force": "rates"
+    },
+    "TLT": {
+      "horizons": {
+        "5d": {
+          "score": 0.0029,
+          "rank_pct": 0.1579,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.017489,
+          "rank_pct": 0.2368,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.6053,
+      "force": "rates"
+    },
+    "UNG": {
+      "horizons": {
+        "5d": {
+          "score": 0.008925,
+          "rank_pct": 0.9737,
+          "lean": 1
+        },
+        "21d": {
+          "score": 0.027722,
+          "rank_pct": 0.7368,
+          "lean": 0
+        }
+      },
+      "lean": 1,
+      "conviction": 0.7105,
+      "force": "commodity"
+    },
+    "USMV": {
+      "horizons": {
+        "5d": {
+          "score": 0.003399,
+          "rank_pct": 0.2895,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.022214,
+          "rank_pct": 0.4474,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.2631,
+      "force": "factor"
+    },
+    "VGK": {
+      "horizons": {
+        "5d": {
+          "score": 0.005231,
+          "rank_pct": 0.6316,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.024108,
+          "rank_pct": 0.5658,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.1974,
+      "force": "region"
+    },
+    "VLUE": {
+      "horizons": {
+        "5d": {
+          "score": 0.003361,
+          "rank_pct": 0.2632,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.014247,
+          "rank_pct": 0.1579,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.5789,
+      "force": "factor"
+    },
+    "VNQ": {
+      "horizons": {
+        "5d": {
+          "score": 0.004878,
+          "rank_pct": 0.5526,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.026709,
+          "rank_pct": 0.6711,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.2237,
+      "force": "reit"
+    },
+    "VPL": {
+      "horizons": {
+        "5d": {
+          "score": 0.00241,
+          "rank_pct": 0.0658,
+          "lean": -1
+        },
+        "21d": {
+          "score": 0.020659,
+          "rank_pct": 0.3421,
+          "lean": 0
+        }
+      },
+      "lean": -1,
+      "conviction": 0.5921,
+      "force": "region"
+    },
+    "VTI": {
+      "horizons": {
+        "5d": {
+          "score": 0.00411,
+          "rank_pct": 0.4079,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.016678,
+          "rank_pct": 0.2105,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.3816,
+      "force": "style"
+    },
+    "XBI": {
+      "horizons": {
+        "5d": {
+          "score": 0.00731,
+          "rank_pct": 0.9211,
+          "lean": 1
+        },
+        "21d": {
+          "score": 0.035055,
+          "rank_pct": 0.9605,
+          "lean": 1
+        }
+      },
+      "lean": 1,
+      "conviction": 0.8816,
+      "force": "industry"
+    },
+    "XHB": {
+      "horizons": {
+        "5d": {
+          "score": 0.003611,
+          "rank_pct": 0.3289,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.030909,
+          "rank_pct": 0.8684,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.1973,
+      "force": "industry"
+    },
+    "XLB": {
+      "horizons": {
+        "5d": {
+          "score": 0.004629,
+          "rank_pct": 0.5132,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.02409,
+          "rank_pct": 0.5526,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.0658,
+      "force": "sector"
+    },
+    "XLC": {
+      "horizons": {
+        "5d": {
+          "score": 0.003231,
+          "rank_pct": 0.2237,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.01654,
+          "rank_pct": 0.1974,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.5789,
+      "force": "sector"
+    },
+    "XLE": {
+      "horizons": {
+        "5d": {
+          "score": 0.004227,
+          "rank_pct": 0.4211,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.028138,
+          "rank_pct": 0.75,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.1711,
+      "force": "sector"
+    },
+    "XLF": {
+      "horizons": {
+        "5d": {
+          "score": 0.003204,
+          "rank_pct": 0.2105,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.022064,
+          "rank_pct": 0.4079,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.3816,
+      "force": "equities"
+    },
+    "XLI": {
+      "horizons": {
+        "5d": {
+          "score": 0.005393,
+          "rank_pct": 0.6711,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.032306,
+          "rank_pct": 0.9079,
+          "lean": 1
+        }
+      },
+      "lean": 1,
+      "conviction": 0.579,
+      "force": "sector"
+    },
+    "XLK": {
+      "horizons": {
+        "5d": {
+          "score": 0.001399,
+          "rank_pct": 0.0395,
+          "lean": -1
+        },
+        "21d": {
+          "score": 0.022077,
+          "rank_pct": 0.4342,
+          "lean": 0
+        }
+      },
+      "lean": -1,
+      "conviction": 0.5263,
+      "force": "sector"
+    },
+    "XLP": {
+      "horizons": {
+        "5d": {
+          "score": 0.006076,
+          "rank_pct": 0.8421,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.026627,
+          "rank_pct": 0.6579,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.5,
+      "force": "sector"
+    },
+    "XLRE": {
+      "horizons": {
+        "5d": {
+          "score": 0.005779,
+          "rank_pct": 0.7763,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.030999,
+          "rank_pct": 0.8816,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.6579,
+      "force": "sector"
+    },
+    "XLU": {
+      "horizons": {
+        "5d": {
+          "score": 0.006937,
+          "rank_pct": 0.8816,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.031708,
+          "rank_pct": 0.8947,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.7763,
+      "force": "sector"
+    },
+    "XLV": {
+      "horizons": {
+        "5d": {
+          "score": 0.004777,
+          "rank_pct": 0.5395,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.028679,
+          "rank_pct": 0.7763,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.3158,
+      "force": "sector"
+    },
+    "XLY": {
+      "horizons": {
+        "5d": {
+          "score": 0.005267,
+          "rank_pct": 0.6579,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.029039,
+          "rank_pct": 0.8026,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.4605,
+      "force": "sector"
+    },
+    "XME": {
+      "horizons": {
+        "5d": {
+          "score": 0.005581,
+          "rank_pct": 0.7105,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.022518,
+          "rank_pct": 0.4605,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.171,
+      "force": "industry"
+    },
+    "XOP": {
+      "horizons": {
+        "5d": {
+          "score": 0.005512,
+          "rank_pct": 0.6974,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.028964,
+          "rank_pct": 0.7895,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.4869,
+      "force": "industry"
+    },
+    "XRT": {
+      "horizons": {
+        "5d": {
+          "score": 0.007154,
+          "rank_pct": 0.8947,
+          "lean": 0
+        },
+        "21d": {
+          "score": 0.029793,
+          "rank_pct": 0.8289,
+          "lean": 0
+        }
+      },
+      "lean": 0,
+      "conviction": 0.7236,
+      "force": "industry"
+    }
+  },
+  "note": "SHADOW research advisory (qlib Alpha158+LightGBM) \u2014 never enforced",
+  "disclaimer": "ranking across macro PROXIES (incl. indices); advisory only"
+}
