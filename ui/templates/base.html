@@ -4,11 +4,12 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>{% block title %}qlib_lab{% endblock %}</title>
-<link href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta20/dist/css/tabler.min.css" rel="stylesheet"/>
+<link href="/static/vendor/tabler.min.css" rel="stylesheet"/>
 <style>
   body { background:#10131a; }
   .mono { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.82rem; }
 </style>
+<script src="/static/app.js"></script>
 {% block head %}{% endblock %}
 </head>
 <body class="theme-dark">
@@ -42,7 +43,6 @@
   </footer>
 </div>
 
-<script src="/static/app.js"></script>
 {% block scripts %}{% endblock %}
 </body>
 </html>
