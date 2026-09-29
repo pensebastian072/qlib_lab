@@ -1,5 +1,13 @@
 # qlib_lab
 
+<!-- one-tap-install -->
+[![Download ZIP](https://img.shields.io/badge/Download-ZIP-2ea44f?style=for-the-badge&logo=github)](https://github.com/pensebastian072/qlib_lab/archive/refs/heads/main.zip)
+
+**Run it on your computer in 3 steps:** 1) [download the ZIP](https://github.com/pensebastian072/qlib_lab/archive/refs/heads/main.zip) · 2) unzip it · 3) double-click **`install.bat`** (Windows) or run **`./install.sh`** (macOS/Linux).
+The dashboard opens in your browser at `http://127.0.0.1:8103` - it runs only on your machine. Next time use `start.bat` / `./start.sh`.
+For the full research stack (large downloads) use `install.bat --full` / `./install.sh --full`.
+<!-- one-tap-install -->
+
 Microsoft [Qlib](https://github.com/microsoft/qlib) research bench feeding the HQ
 trading dashboard with **advisory SHADOW** signals. Paper/advisory only — nothing
 here places orders or sits on a trade hot path.

@@ -45,6 +45,30 @@ SNAP_DIR = UI_DIR / "snapshot"
 app = Flask(__name__)
 
 
+# Browsers reject NaN/Infinity in JSON, which left the page stuck on "loading...".
+# Emit them as null so the tables render; missing stats already show as "–".
+import math as _math
+from flask.json.provider import DefaultJSONProvider as _DJP
+
+
+def _finite(o):
+    if isinstance(o, float) and not _math.isfinite(o):
+        return None
+    if isinstance(o, dict):
+        return {k: _finite(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [_finite(v) for v in o]
+    return o
+
+
+class _FiniteJSON(_DJP):
+    def dumps(self, obj, **kw):
+        return super().dumps(_finite(obj), **kw)
+
+
+app.json = _FiniteJSON(app)
+
+
 def _parse_ts(value) -> datetime | None:
     try:
         ts = datetime.fromisoformat(str(value))

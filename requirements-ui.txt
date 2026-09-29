@@ -1,0 +1,2 @@
+# Dashboard only (install.bat / install.sh default). Full research stack: requirements.txt
+flask>=3.0
