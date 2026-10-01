@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -8,6 +8,9 @@
 <style>
   body { background:#10131a; }
   .mono { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.82rem; }
+  /* Tabler 1.0.0-beta20 dropped the old theme-dark/navbar-dark classes and no longer gives
+     solid badges a text colour, which left the header title and every badge unreadable. */
+  .badge:not([class*="-lt"]) { color:#fff; }
 </style>
 <script src="/static/app.js"></script>
 {% block head %}{% endblock %}
